@@ -10,7 +10,7 @@ COPY sbin /usr/local/sbin
 
 RUN chmod +x /usr/local/sbin/docker
 
-ADD https://raw.githubusercontent.com/docker-bundle/docker-bundle/master/docker-bundle.py /usr/local/sbin/docker-bundle
+ADD https://raw.githubusercontent.com/docker-bundle/docker-bundle/v0.1.0/docker-bundle.py /usr/local/sbin/docker-bundle
 
 RUN chmod +x /usr/local/sbin/docker-bundle
 
