@@ -1,13 +1,15 @@
 # Docker bundle wrapper
 
-Run docker-bundle in a tiny docker container.
+Run docker-bundle in a tiny docker container.	
 
 # Installation
 
-###  Mac, Linux:
-1. Require Docker
 
-2. Put this code into your .bashrc/.zshrc/.bash_profile
+* Require [Docker](https://docs.docker.com/install/)
+
+###  Mac, Linux:
+
+* Put this code into your .bashrc/.zshrc/.bash_profile
 ```
 alias docker-bundlew='docker run -it --rm -w "${PWD}" -v "${PWD}:${PWD}"\
                       -v //var/run/docker.sock:/var/run/docker.sock\
@@ -15,9 +17,25 @@ alias docker-bundlew='docker run -it --rm -w "${PWD}" -v "${PWD}:${PWD}"\
                       -v wrapper-bundle:/root/.docker-bundle/\
                       dockerbundle/wrapper'
 ```
-3.  test docker-bundlew
+
+###  Windows:
+* Put this code into `docker-bundlew.bat`
 ```
-$ docker-bundlew
+@echo off
+set DIR=\%CD%..\
+set DIR=%DIR:\=/%
+set DIR=%DIR::=%
+docker run -it --rm -w "%DIR%" -v "%DIR%:%DIR%"^
+                      -v //var/run/docker.sock:/var/run/docker.sock^
+                      -v wrapper-sbin:/usr/local/sbin/^
+                      -v wrapper-bundle:/root/.docker-bundle/^
+                      dockerbundle/wrapper %*
+```
+
+#  Run docker-bundlew
+```
+
+> docker-bundlew
 
     Docker-bundle
 
@@ -36,4 +54,5 @@ Commands:
     search                        Search for bundle you want
     source                        Manage sources
 ```
-Complete
+
+## Enjoy It!
