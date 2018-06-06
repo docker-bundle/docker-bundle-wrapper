@@ -22,7 +22,7 @@ alias docker-bundlew='docker run -it --rm -w "${PWD}" -v "${PWD}:${PWD}"\
 * Put this code into `docker-bundlew.bat`
 ```
 @echo off
-set DIR=\%CD%..\
+set DIR=\%CD%\
 set DIR=%DIR:\=/%
 set DIR=%DIR::=%
 docker run -it --rm -w "%DIR%" -v "%DIR%:%DIR%"^
