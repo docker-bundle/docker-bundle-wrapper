@@ -11,7 +11,7 @@ Run docker-bundle in a tiny docker container.
 
 * Put this code into your .bashrc/.zshrc/.bash_profile
 ```
-alias docker-bundlew="docker run -it --rm -w \"${PWD}\" -v \"${PWD}:${PWD}\"\
+alias docker-bundlew="docker run -it --rm -w \"\${PWD}\" -v \"\${PWD}:\${PWD}\"\
                       -v //var/run/docker.sock:/var/run/docker.sock\
                       -v wrapper-sbin:/usr/local/sbin/\
                       -v wrapper-bundle:/root/.docker-bundle/\
