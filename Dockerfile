@@ -1,15 +1,13 @@
-FROM alpine:3.8
+FROM alpine:3.10
 
-MAINTAINER Xiaobawang <windworst@gmail.com>
+LABEL Xiaobawang <windworst@gmail.com>
 
-RUN apk add --update --no-cache git python3 py3-pip
+RUN apk add --update --no-cache python3 py3-pip
 
-RUN pip3 install docker-compose
+RUN pip3 --no-cache-dir --disable-pip-version-check install docker-compose==1.23.1
 
 COPY sbin /usr/local/sbin
 
-ADD https://raw.githubusercontent.com/docker-bundle/docker-bundle/stable/docker-bundle.py /usr/local/sbin/docker-bundle
-
-RUN chmod +x /usr/local/sbin/docker /usr/local/sbin/docker-bundle
+RUN chmod +x /usr/local/sbin/*
 
 ENTRYPOINT ["docker-bundle"]

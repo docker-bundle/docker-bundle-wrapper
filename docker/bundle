@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# this is script entry
+# put your script here
+
+echo =========================================
+echo PUT YOUR SCRIPT INTO "\`docker/bundle\`"
+echo ARGS: $@
+echo =========================================

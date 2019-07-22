@@ -1,0 +1,7 @@
+#!/bin/sh
+ENTRY_FILE="$PWD/docker/bundle"
+if [ -x "$ENTRY_FILE" ]; then
+  $ENTRY_FILE $@
+elif [ -e "$ENTRY_FILE" ]; then
+  sh $ENTRY_FILE $@
+fi
