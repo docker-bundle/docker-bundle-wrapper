@@ -8,6 +8,4 @@ RUN pip3 --no-cache-dir --disable-pip-version-check install docker-compose==1.23
 
 COPY sbin /usr/local/sbin
 
-RUN chmod +x /usr/local/sbin/*
-
 ENTRYPOINT ["docker-bundle"]
